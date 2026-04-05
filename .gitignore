@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+messages.txt
+
+# Environment variables
+.env
+.env.test
+.env.development
+.env.production
+.env.local
+
+# Dependency directories
+node_modules/
+dist/
+build/
+.cache/
+
+# OS/IDE
+.DS_Store
+.vscode/*
+!.vscode/settings.json
