@@ -14,13 +14,13 @@ const Education = () => {
       institution: 'Datta Meghe College of Engineering CIDCO Sector III Airoli Navi Mumbai 400 708',
       degree: 'Bachelor of Engineering - BE, Artificial intelligence and Data science',
       date: 'Sep 2024 – Apr 2028',
-
+      details: 'CGPA: 9.36'
     },
     {
       institution: 'Godavari Foundations Dr. Ulhas Patil English Medium School, Savda',
       degree: 'HSC',
       date: 'May 2024',
-      details: ''
+      details: 'Grade: 76%'
     },
     {
       institution: 'Godavari Foundations Dr. Ulhas Patil English Medium School, Bhusawal',
@@ -56,9 +56,9 @@ const Education = () => {
               <div className="absolute w-4 h-4 bg-accent rounded-full -left-[40.5px] md:-left-[48.5px] top-8 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></div>
 
               <div className="flex flex-col mb-4 gap-2">
-                <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
-                  <FaGraduationCap className="text-accent shrink-0" size={24} />
-                  {edu.institution}
+                <h3 className="text-xl md:text-2xl font-bold text-white flex items-start gap-3 w-full">
+                  <FaGraduationCap className="text-accent shrink-0 mt-1" size={24} />
+                  <span className="break-words leading-tight">{edu.institution}</span>
                 </h3>
                 <p className="text-lg text-purple-400 font-medium leading-snug">
                   {edu.degree}

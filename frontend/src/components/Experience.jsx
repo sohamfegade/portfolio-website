@@ -35,9 +35,9 @@ const Experience = () => {
           <div className="experience-card glass-card p-6 md:p-8 relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
-                  <FaBriefcase className="text-accent" size={20} />
-                  Technical Team Member
+                <h3 className="text-xl md:text-2xl font-bold text-white flex items-start gap-3 w-full">
+                  <FaBriefcase className="text-accent shrink-0 mt-1" size={20} />
+                  <span className="break-words leading-tight">Technical Team Member</span>
                 </h3>
                 <p className="text-lg text-purple-400 font-medium mt-1">SHAIDS DMCE</p>
               </div>

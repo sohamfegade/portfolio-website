@@ -48,7 +48,7 @@ const Loader = ({ onComplete }) => {
     >
       <div
         ref={textRef}
-        className="flex space-x-2 text-5xl md:text-7xl font-extrabold py-10"
+        className="flex space-x-1 sm:space-x-2 md:space-x-4 text-3xl sm:text-4xl md:text-7xl font-extrabold py-10"
       >
         {['S', 'O', 'H', 'A', 'M', '\u00A0', 'F', 'E', 'G', 'A', 'D', 'E'].map((char, index) => (
           <span
