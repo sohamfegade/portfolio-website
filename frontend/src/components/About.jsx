@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { BookOpen, Target, Code2 } from 'lucide-react';
+import { BookOpen, Target, Code2, Brain } from 'lucide-react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,7 +14,7 @@ const About = () => {
       scrollTrigger: { trigger: container.current, start: 'top 80%' },
       y: 30, opacity: 0, duration: 1, ease: 'power3.out', stagger: 0.2
     });
-    
+
     gsap.from('.about-text p', {
       scrollTrigger: { trigger: container.current, start: 'top 70%' },
       y: 30, opacity: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out'
@@ -47,7 +47,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="about-cards-container grid md:grid-cols-2 gap-6 max-w-4xl mx-auto w-full">
+          {/* Updated grid to md:grid-cols-3 to accommodate the 3 cards side-by-side on desktop */}
+          <div className="about-cards-container grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
             <div className="about-card glass-card w-full p-6 flex gap-4 items-start hover:-translate-y-1 transition-transform">
               <div className="bg-purple-500/20 p-3 rounded-lg text-purple-400 shrink-0">
                 <Code2 size={24} />
@@ -67,6 +68,18 @@ const About = () => {
                 <p className="text-gray-400 text-sm">Creating impactful solutions that contribute to technological innovation.</p>
               </div>
             </div>
+
+            {/* New Interests Card */}
+            <div className="about-card glass-card w-full p-6 flex gap-4 items-start hover:-translate-y-1 transition-transform">
+              <div className="bg-green-500/20 p-3 rounded-lg text-green-400 shrink-0">
+                <Brain size={24} />
+              </div>
+              <div className="text-left">
+                <h3 className="text-white font-semibold text-xl mb-1">Interests</h3>
+                <p className="text-gray-400 text-sm">Having interest in Data science, Gen AI and cybersecurity.</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
