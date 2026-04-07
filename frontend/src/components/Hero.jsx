@@ -99,7 +99,10 @@ const Hero = () => {
           <img
             src="https://ik.imagekit.io/ns4gfx2mi/Personal/profile.jpeg"
             alt="Soham Fegade"
-            className="relative z-10 rounded-3xl object-cover w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 border border-gray-800 shadow-2xl rotate-2 group-hover:rotate-0 transition-transform duration-500"
+            // We set the initial state on mobile to no rotation,
+            // then apply the default rotation only on `md` screens,
+            // and the hover rotation only on `md` screens.
+            className="relative z-10 rounded-3xl object-cover w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 border border-gray-800 shadow-2xl rotate-0 md:rotate-2 md:group-hover:rotate-0 transition-transform duration-500"
           />
         </div>
 
