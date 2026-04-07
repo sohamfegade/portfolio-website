@@ -6,6 +6,35 @@ import { FaBriefcase } from 'react-icons/fa';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Helper function to dynamically calculate the duration
+const calculateDuration = (startDateStr) => {
+  const start = new Date(startDateStr);
+  const now = new Date();
+
+  // Calculate total months difference
+  let totalMonths = (now.getFullYear() - start.getFullYear()) * 12;
+  totalMonths -= start.getMonth();
+  totalMonths += now.getMonth();
+  
+  // Add 1 to make it inclusive (e.g., July to Present counts July as a full month)
+  totalMonths += 1;
+
+  // Format the output
+  if (totalMonths < 12) {
+    return `${totalMonths} mo${totalMonths > 1 ? 's' : ''}`;
+  }
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  let duration = `${years} yr${years > 1 ? 's' : ''}`;
+  if (months > 0) {
+    duration += ` ${months} mo${months > 1 ? 's' : ''}`;
+  }
+
+  return duration;
+};
+
 const Experience = () => {
   const container = useRef(null);
 
@@ -31,7 +60,7 @@ const Experience = () => {
 
         <div className="relative border-l border-gray-800 ml-3 md:ml-6 pl-8 md:pl-10 py-4">
           <div className="absolute w-4 h-4 bg-accent rounded-full -left-[8.5px] top-8 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></div>
-          
+
           <div className="experience-card glass-card p-6 md:p-8 relative">
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
               <div>
@@ -42,7 +71,8 @@ const Experience = () => {
                 <p className="text-lg text-purple-400 font-medium mt-1">SHAIDS DMCE</p>
               </div>
               <div className="inline-block px-4 py-1.5 rounded-full border border-gray-700 bg-secondary/50 text-gray-300 text-sm font-medium w-max">
-                Jul 2025 - Present · 10 mos
+                {/* Dynamically calculating from July 2025 */}
+                Jul 2025 - Present · {calculateDuration('2025-07-01')}
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed">
