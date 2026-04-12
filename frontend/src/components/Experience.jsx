@@ -10,13 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 const calculateDuration = (startDateStr, endDateStr) => {
   const start = new Date(startDateStr);
   const end = endDateStr.toLowerCase() === 'present' ? new Date() : new Date(endDateStr);
-  
+
   if (isNaN(start.getTime()) || isNaN(end.getTime())) return '';
 
   let months = (end.getFullYear() - start.getFullYear()) * 12;
   months -= start.getMonth();
   months += end.getMonth();
-  
+
   // Inclusive month logic
   months += 1;
 
@@ -28,7 +28,7 @@ const calculateDuration = (startDateStr, endDateStr) => {
   let durationStr = '';
   if (years > 0) durationStr += `${years} yr${years > 1 ? 's' : ''} `;
   if (remainingMonths > 0) durationStr += `${remainingMonths} mo${remainingMonths > 1 ? 's' : ''}`;
-  
+
   return durationStr.trim();
 };
 
@@ -42,6 +42,11 @@ const Experience = () => {
       startDate: 'Jul 2025',
       endDate: 'Present',
       description: 'Responsible for managing and updating the official SHAIDS website. Work includes developing new features, maintaining UI/UX, fixing bugs, and ensuring smooth deployment and performance.',
+      keyContributions: [
+        <><strong>SHAIDS DMCE website</strong> - Official website for Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>,
+        <><strong>HackHive 2.0 website</strong> - A 12 Hour intercollege Hackathon organized by Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>,
+        <><strong>Glitched Game website</strong> - Technitude 2026 DMCE organized by Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>
+      ]
     }
   ];
 
@@ -76,16 +81,32 @@ const Experience = () => {
                   </h3>
                   <p className="text-lg text-rose-400 font-medium mt-1 ml-9">{exp.company}</p>
                 </div>
-                
+
                 {/* Dynamically Calculated Date Pill */}
                 <div className="inline-block px-4 py-1.5 rounded-full border border-orange-900/40 bg-[#2d1b1b]/40 text-orange-400 text-sm font-semibold w-max shadow-inner md:ml-auto">
                   {exp.startDate} - {exp.endDate} · {calculateDuration(exp.startDate, exp.endDate)}
                 </div>
               </div>
-              
+
               <p className="text-gray-400 leading-relaxed ml-9 text-base md:text-lg">
                 {exp.description}
               </p>
+
+              {exp.keyContributions && exp.keyContributions.length > 0 && (
+                <div className="ml-9 mt-5 text-base md:text-lg">
+                  <h4 className="text-orange-400/80 font-semibold mb-3">Key Contributions:</h4>
+                  <div className="flex flex-col gap-3">
+                    {exp.keyContributions.map((contribution, idx) => (
+                      <div
+                        key={idx}
+                        className="block w-full leading-relaxed px-4 py-3 rounded-xl border border-orange-900/40 bg-[#2d1b1b]/40 text-white text-sm md:text-base font-medium shadow-inner"
+                      >
+                        {contribution}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
