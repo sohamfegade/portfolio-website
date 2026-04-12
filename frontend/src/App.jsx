@@ -9,14 +9,12 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
-import ParticlesBackground from './components/ParticlesBackground';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className="min-h-screen bg-primary relative">
-      <ParticlesBackground />
       <div className="relative z-10">
         {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
         
@@ -24,12 +22,12 @@ function App() {
         <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0 h-screen overflow-hidden' : 'opacity-100'}`}>
           <Navbar />
           <main>
-            <Hero />
+            <Hero isLoaded={!isLoading} />
             <About />
             <Education />
             <Experience />
-            <Projects />
             <Skills />
+            <Projects />
             <Contact />
           </main>
           <Footer />

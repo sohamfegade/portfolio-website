@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaGraduationCap } from 'react-icons/fa';
+import { Calendar } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,7 @@ const Education = () => {
 
   const educationData = [
     {
-      institution: 'Datta Meghe College of Engineering CIDCO Sector III Airoli Navi Mumbai 400 708',
+      institution: 'Datta Meghe College of Engineering',
       degree: 'Bachelor of Engineering - BE, Artificial intelligence and Data science',
       date: 'Sep 2024 – Apr 2028',
       details: 'CGPA: 9.36'
@@ -40,48 +41,109 @@ const Education = () => {
       scrollTrigger: { trigger: container.current, start: 'top 75%' },
       y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power2.out'
     });
+
+    // Animate timeline line segments
+    const segments = container.current.querySelectorAll('.timeline-segment-fill');
+    segments.forEach((segment) => {
+      gsap.fromTo(
+        segment,
+        { scaleY: 0, transformOrigin: 'top center' },
+        {
+          scaleY: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: segment.parentElement, // Trigger from the track container 
+            start: 'top 65%',
+            end: 'bottom 65%',
+            scrub: true,
+          },
+        }
+      );
+    });
+
+    // Animate each timeline dot strictly targeting rendered DOM nodes
+    const dots = container.current.querySelectorAll('.timeline-dot');
+    dots.forEach((dot) => {
+      gsap.fromTo(
+        dot,
+        { scale: 0, transformOrigin: 'center center' },
+        {
+          scale: 1,
+          duration: 0.8,
+          ease: 'back.out(1.7)',
+          scrollTrigger: {
+            trigger: dot,
+            start: 'top 70%',
+          },
+        }
+      );
+    });
   }, { scope: container });
 
   return (
-    <section id="education" ref={container} className="py-24 px-6 overflow-hidden bg-secondary/30">
-      <div className="max-w-5xl mx-auto">
+    <section id="education" ref={container} className="py-24 px-6 overflow-hidden">
+      <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16 education-heading">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Education</h2>
-          <div className="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+          <h2 className="text-5xl md:text-7xl font-black mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 text-transparent bg-clip-text inline-block tracking-tight">Education</h2>
+          <p className="text-gray-400 text-lg md:text-xl font-medium">Academic foundation in AI & DS and technology</p>
         </div>
 
-        <div className="relative border-l border-gray-800 ml-3 md:ml-6 pl-8 md:pl-10 py-4 space-y-12">
-          {educationData.map((edu, index) => (
-            <div key={index} className="education-card relative glass-card p-6 md:p-8">
-              <div className="absolute w-4 h-4 bg-accent rounded-full -left-[40.5px] md:-left-[48.5px] top-8 shadow-[0_0_10px_rgba(99,102,241,0.8)]"></div>
+        <div className="relative ml-8 md:ml-12 education-timeline"> 
+          
+          <div>
+            {educationData.map((edu, index) => (
+              <div key={index} className="relative mb-12">
+                
+                {/* Timeline Dot (Pops in) */}
+                <div className="timeline-dot absolute left-[-29px] md:left-[-39px] top-[32px] md:top-[40px] w-4 h-4 rounded-full bg-indigo-500 border-4 border-[#0a0a0a] z-10 shadow-[0_0_15px_rgba(99,102,241,0.8)]"></div>
 
-              <div className="flex flex-col mb-4 gap-2">
-                <h3 className="text-xl md:text-2xl font-bold text-white flex items-start gap-3 w-full">
-                  <FaGraduationCap className="text-accent shrink-0 mt-1" size={24} />
-                  <span className="break-words leading-tight">{edu.institution}</span>
-                </h3>
-                <p className="text-lg text-purple-400 font-medium leading-snug">
-                  {edu.degree}
-                </p>
-                {edu.date && (
-                  <div className="inline-block mt-2 px-4 py-1.5 rounded-full border border-gray-700 bg-secondary/50 text-gray-300 text-sm font-medium w-max">
-                    {edu.date}
+                {/* Line segment connecting to NEXT dot */}
+                {index !== educationData.length - 1 && (
+                  <div className="absolute left-[-22px] md:left-[-32px] top-[40px] md:top-[48px] bottom-[-88px] md:bottom-[-96px] w-[2px] bg-[#202020] z-0">
+                    <div className="timeline-segment-fill absolute inset-0 bg-indigo-500 origin-top shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
                   </div>
                 )}
+
+                {/* Main Card */}
+                <div className="education-card glass-card p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start z-20 relative border border-[#27272a] hover:border-indigo-500/30 transition-colors duration-500">
+                  {/* Icon Box */}
+                  <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#1e1c2e] border border-indigo-900/40 flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.15)] relative z-10">
+                    <FaGraduationCap className="text-indigo-400" size={32} />
+                  </div>
+
+                  {/* Main Info */}
+                  <div className="flex-grow w-full">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-3">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-2 leading-tight">
+                          {edu.institution}
+                        </h3>
+                        <p className="text-gray-300 font-medium text-lg mb-4">
+                          {edu.degree}
+                        </p>
+                      </div>
+
+                      {/* Date and Grade */}
+                      <div className="flex flex-col md:items-end gap-3 flex-shrink-0">
+                        {edu.date && (
+                          <div className="flex items-center gap-2 text-gray-400 font-medium text-sm">
+                            <Calendar size={16} />
+                            {edu.date}
+                          </div>
+                        )}
+                        {edu.details && (
+                          <div className="inline-block px-4 py-1.5 rounded-full border border-purple-900/50 bg-[#2d1b38]/40 text-purple-400 text-sm font-semibold shadow-inner">
+                            {edu.details}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
               </div>
-              {edu.details && (
-                <p className="text-gray-400 leading-relaxed mt-2 font-medium">
-                  {edu.details.includes('Skills:') ? (
-                    <>
-                      <strong className="text-gray-300">Skills:</strong> {edu.details.replace('Skills: ', '')}
-                    </>
-                  ) : (
-                    edu.details
-                  )}
-                </p>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #141414;
-  --color-secondary: #1f1f1f;
-  --color-accent: #6366f1;
+  --color-primary: #0a0a0a;
+  --color-secondary: #171717;
+  --color-accent: #2563eb;
   --font-inter: 'Inter', sans-serif;
+  
+  /* Additional colors for glow */
+  --color-glow-blue: #00d2ff;
+  --color-glow-purple: #3a7bd5;
 }
 
 @layer base {
@@ -22,15 +26,19 @@
 
 @layer components {
   .nav-link {
-    @apply hover:text-accent transition-colors duration-300;
+    @apply hover:text-white text-gray-400 transition-colors duration-300;
   }
   
   .glass-card {
-    background-color: rgb(31 31 31 / 0.8);
+    background-color: rgb(23 23 23 / 0.9);
     backdrop-filter: blur(12px);
-    border: 1px solid #1f2937;
+    border: 1px solid #27272a;
     border-radius: 0.75rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.5);
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500;
   }
 }
 
