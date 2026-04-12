@@ -88,9 +88,6 @@ const Projects = () => {
 
                   <div className="flex justify-between items-center mb-4">
                     <div className="text-gray-400 font-medium">{proj.date}</div>
-                    <button className="text-fuchsia-400 font-semibold flex items-center gap-2 hover:text-fuchsia-300 transition-colors">
-                      {isExpanded ? <><FaChevronUp size={14} /> Show Less</> : <><FaChevronDown size={14} /> View Details</>}
-                    </button>
                   </div>
 
                   {/* Tech Pills */}
