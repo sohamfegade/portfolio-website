@@ -146,7 +146,7 @@ const Projects = () => {
                     {/* Contributors & Link */}
                     <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-gray-800 gap-6">
                       <div>
-                        <h4 className="text-lg font-bold text-gray-200 mb-3 tracking-tight">Contributors</h4>
+                        <h4 className="text-lg font-bold text-gray-200 mb-3 tracking-tight">Other Contributors</h4>
                         <div className="flex -space-x-4">
                           {proj.contributors.map((contributor, index) => (
                             <a
