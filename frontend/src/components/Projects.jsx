@@ -39,7 +39,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'ZapIt – High-Speed File & App Sharing Application',
-      date: 'Aug 2026 – Sep 2026',
+      date: 'April 2026 – June 2026',
       association: 'Independent Project',
       intro: 'A fast, secure, and internet-free file sharing application that enables users to transfer files, media, documents, and applications directly between Android devices using Wi-Fi Direct technology.',
       features: [
