@@ -40,12 +40,12 @@ const Experience = () => {
       role: 'Technical Team Member',
       company: 'SHAIDS DMCE',
       startDate: 'Jul 2025',
-      endDate: 'Present',
+      endDate: 'Jun 2026',
       description: 'Responsible for managing and updating the official SHAIDS website. Work includes developing new features, maintaining UI/UX, fixing bugs, and ensuring smooth deployment and performance.',
       keyContributions: [
-        <><strong>SHAIDS DMCE website</strong> - Official website for Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>,
-        <><strong>HackHive 2.0 website</strong> - A 12 Hour intercollege Hackathon organized by Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>,
-        <><strong>Glitched Game website</strong> - Technitude 2026 DMCE organized by Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>
+        <><strong key="1">SHAIDS DMCE website</strong> - Official website for Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>,
+        <><strong key="2">HackHive 2.0 website</strong> - A 12 Hour intercollege Hackathon organized by Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>,
+        <><strong key="3">Glitched Game website</strong> - Technitude 2026 DMCE organized by Students Hive Of Artificial Intelligence & Data Science (SHAIDS), DMCE</>
       ]
     }
   ];
