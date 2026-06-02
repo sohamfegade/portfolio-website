@@ -53,7 +53,7 @@ const Projects = () => {
       impact: "Developing ZapIt provided valuable hands-on experience in mobile application development, wireless networking, peer-to-peer communication, and Flutter application architecture. The project strengthened my understanding of Android networking concepts, state management, UI/UX design, and real-world file transfer mechanisms while building a practical solution for fast and reliable offline sharing.",
       tech: ['Flutter', 'Dart', 'Android Studio', 'Wi-Fi Direct', 'Android SDK'],
       contributors: [], // Left empty so the section hides automatically
-      github: 'https://github.com/sohamfegade/ZapIt', // Update with actual GitHub link if available
+      github: 'https://github.com/sohamfegade/ZapIt.git', // Update with actual GitHub link if available
       actionLink: '/ZapIt.apk', // Place your APK file in the public folder
       actionType: 'download',
       image: null // Uses placeholder styling if no image is provided
@@ -172,7 +172,7 @@ const Projects = () => {
 
                     {/* Contributors & Link */}
                     <div className="flex flex-col md:flex-row justify-between items-center pt-6 border-t border-gray-800 gap-6">
-                      
+
                       {/* Conditional Render for Contributors */}
                       {proj.contributors && proj.contributors.length > 0 ? (
                         <div className="flex flex-col items-center md:items-start text-center md:text-left">
