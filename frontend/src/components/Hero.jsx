@@ -188,17 +188,10 @@ const Hero = ({ isLoaded = true }) => {
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </a>
           
-          {/* 
           <a href="/resume.pdf" download className="hero-btn w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-[#1f1f1f] border border-gray-700 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-2">
             Download Resume
             <Download size={18} />
           </a> 
-          */}
-          
-          <a href="#contact" className="hero-btn w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-[#1f1f1f] border border-gray-700 text-white font-semibold rounded-lg transition-all flex items-center justify-center gap-2">
-            Let's Connect
-            <Mail size={18} />
-          </a>
         </div>
 
       </div>
