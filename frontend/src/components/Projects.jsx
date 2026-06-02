@@ -56,7 +56,7 @@ const Projects = () => {
       github: 'https://github.com/sohamfegade/ZapIt.git', // Update with actual GitHub link if available
       actionLink: '/ZapIt.apk', // Place your APK file in the public folder
       actionType: 'download',
-      image: null // Uses placeholder styling if no image is provided
+      image: '/zapit_logo.png'
     }
   ];
 
