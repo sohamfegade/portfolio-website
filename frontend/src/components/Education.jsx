@@ -15,7 +15,7 @@ const Education = () => {
       institution: 'Datta Meghe College of Engineering',
       degree: 'Bachelor of Engineering - BE, Artificial intelligence and Data science',
       date: 'Sep 2024 – Apr 2028',
-      details: 'CGPA: 9.36'
+      details: 'CGPA: 8.9'
     },
     {
       institution: 'Godavari Foundations Dr. Ulhas Patil English Medium School, Savda',
