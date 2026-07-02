@@ -14,19 +14,19 @@ const Education = () => {
     {
       institution: 'Datta Meghe College of Engineering',
       degree: 'Bachelor of Engineering - BE, Artificial intelligence and Data science',
-      date: 'Sep 2024 – Apr 2028',
+      date: '2024 – 2028',
       details: 'CGPA: 8.9'
     },
     {
       institution: 'Godavari Foundations Dr. Ulhas Patil English Medium School, Savda',
       degree: 'HSC',
-      date: 'May 2024',
+      date: '2024',
       details: 'Grade: 76%'
     },
     {
       institution: 'Godavari Foundations Dr. Ulhas Patil English Medium School, Bhusawal',
       degree: 'SSC',
-      date: 'May 2022',
+      date: '2022',
       details: 'Grade: 93.8%'
     }
   ];
