@@ -30,7 +30,7 @@ const About = () => {
           {/* Left Column: Image */}
           <div className="about-image glass-card p-4 rounded-3xl h-fit">
             <img
-              src="https://ik.imagekit.io/ns4gfx2mi/Personal/profile.jpeg"
+              src="https://ik.imagekit.io/ns4gfx2mi/Personal/IMG_20260703_122446.png"
               alt="Soham Fegade"
               className="w-full h-auto object-cover rounded-2xl aspect-[3/4]"
             />
