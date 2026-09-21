@@ -84,11 +84,6 @@ const Experience = () => {
       scrollTrigger: { trigger: container.current, start: 'top 80%' },
       y: 30, opacity: 0, duration: 1, ease: 'power3.out'
     });
-
-    gsap.from('.experience-card', {
-      scrollTrigger: { trigger: container.current, start: 'top 75%' },
-      y: 40, opacity: 0, duration: 0.8, stagger: 0.2, ease: 'power2.out'
-    });
   }, { scope: container });
 
   return (
